@@ -51,7 +51,7 @@
 
 (def rows-limit
   "Maximum number of rows to render in a Pulse image."
-  10)
+  20)
 
 ;; NOTE: hiccup does not escape content by default so be sure to use "h" to escape any user-controlled content :-/
 

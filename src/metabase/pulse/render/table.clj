@@ -11,8 +11,8 @@
 (defn- bar-th-style []
   (merge
    (style/font-style)
-   {:font-size :12px
-    :font-weight     700
+   {:font-size :10px
+    :font-weight     400
     :color           style/color-text-medium
     :border-bottom   (str "1px solid " style/color-header-row-border)
     :padding-top     :20px
@@ -23,14 +23,14 @@
 (defn- bar-td-style []
   (merge
    (style/font-style)
-   {:font-size      :12px
-    :font-weight    700
+   {:font-size      :10px
+    :font-weight    400
     :text-align     :left
     :color          style/color-text-dark
     :border-bottom  (str "1px solid " style/color-body-row-border)
     :height         :28px
-    :padding-right  :0.375em
-    :padding-left   :0.375em}))
+    :padding-right  :0.5px
+    :padding-left   :0.5px}))
 
 (defn- bar-th-style-numeric []
   (merge (style/font-style) (bar-th-style) {:text-align :right}))
@@ -78,7 +78,7 @@
   [:thead
    [:tr
     (for [header-cell row]
-      [:th {:style (style/style (row-style-for-type header-cell) (heading-style-for-type header-cell) {:min-width :42px})}
+      [:th {:style (style/style (row-style-for-type header-cell) (heading-style-for-type header-cell) {:min-width :50px})}
        (h header-cell)])
     (when bar-width
       [:th {:style (style/style (bar-td-style) (bar-th-style) {:width (str bar-width "%")})}])]])
@@ -129,7 +129,7 @@
    (render-table color-selector 0 column-names contents))
 
   ([color-selector normalized-zero column-names [header & rows]]
-   [:table {:style (style/style {:max-width "100%"
+   [:table {:style (style/style {:max-width "150px"
                                  :white-space :nowrap
                                  :padding-bottom :8px
                                  :border-collapse :collapse
