@@ -29,8 +29,8 @@
     :color          style/color-text-dark
     :border-bottom  (str "1px solid " style/color-body-row-border)
     :height         :28px
-    :padding-right  :0.5px
-    :padding-left   :0.5px}))
+    :padding-right  :5px
+    :padding-left   :5px}))
 
 (defn- bar-th-style-numeric []
   (merge (style/font-style) (bar-th-style) {:text-align :right}))
@@ -130,7 +130,7 @@
 
   ([color-selector normalized-zero column-names [header & rows]]
    [:table {:style (style/style {:max-width "150px"
-                                 :white-space :nowrap
+                                 :white-space :wrap
                                  :padding-bottom :8px
                                  :border-collapse :collapse
                                  :width "1%"})
